@@ -5,8 +5,8 @@
    Tutorial 12
    Case Problem 3
 
-   Author: 
-   Date:   
+   Author: Anthony S,A Gradillas
+   Date:   4.5.19
 
    Filename: js_tree.js
 
@@ -37,12 +37,16 @@
       node and false if it doesn't
 */
 
-
+// Keeps track of the total count of nodes, element nodes, text nodes, and white-space nodes
+nodeCount = 0;
+elemCount = 0;
+textCount = 0;
+wsCount = 0;
 
 
 
 
 
 function isWhiteSpaceNode(tString) {
-   return !(/[^\t\n\r ]/.test(tString));
+      return !(/[^\t\n\r ]/.test(tString));
 }
