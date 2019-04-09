@@ -43,9 +43,29 @@ elemCount = 0;
 textCount = 0;
 wsCount = 0;
 
+// Runs the makeTree function when the page loads
+window.onload = makeTree;
 
+// The makeTree function will be used to create the node tree for the source article and places the node tree within the HTML document and displays the node counts from the document
+function makeTree() {
+      var treeBox = document.createElement("aside");
+      treeBox.id = "treeBox";
+      treeBox.innerHTML = "<h1>Node Tree</h1>";
 
+      var mainSection = document.getElementById("main");
+      mainSection.appendChild(treeBox);
 
+      var nodeList = document.createElement("ol");
+      treeBox.appendChild(nodeList);
+
+      var sourceArticle = document.querySelector("#main article");
+      makeBranches(sourceArticle, nodeList);
+}
+
+// The function makeBranches will append node branches to the node tree
+function makeBranches(treeNode, nestedList) {
+      nodeCount++;
+}
 
 function isWhiteSpaceNode(tString) {
       return !(/[^\t\n\r ]/.test(tString));
